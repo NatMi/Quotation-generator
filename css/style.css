@@ -1,0 +1,22 @@
+body {
+    background-color: rgb(159, 189, 255);
+    text-align: center;
+    padding: 100px;
+}
+
+.container {
+    background-color: white;
+    padding: 40px;
+    height: 45vh;
+}
+
+.quote-container {
+    font-size: 40px;
+    text-align: center;
+}
+
+.container p{
+    text-transform: capitalize;
+    font-style: italic;
+}
+
