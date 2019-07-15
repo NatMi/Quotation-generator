@@ -1,47 +1,88 @@
 
 // quote base
-    let quotes =[
+    let quotebeginning =[
         {
-            quote: 'Quote1',
-            author: 'Author One'
+            beginning: 'Beginning_1',
         },
 
         {
-            quote: 'Quote2',
-            author: 'Author Two'
+            beginning: 'Beginning_2',
         },
 
         {
-            quote: 'Quote3',
-            author: 'Author Three'
+            beginning: 'Beginning_3',
         },
 
         {
-            quote: 'Quote4',
-            author: 'Author Four'
+            beginning: 'Beginning_4',
         },
 
         {
-            quote: 'Quote5',
-            author: 'Author Five'
+            beginning: 'Beginning_5',
         },
 
         {
-            quote: 'Quote6',
-            author: 'Author Six'
+            beginning: 'Beginning_6',
+        }
+    ]
+
+    let quoteMiddle =[
+        {
+            middle: 'Middle_1',
         },
 
         {
-            quote: 'Quote7',
-            author: 'Author Seven'
+            middle: 'Middle_2',
         },
 
+        {
+            middle: 'Middle_3',
+        },
+
+        {
+            middle: 'Middle_4',
+        },
+
+        {
+            middle: 'Middle_5',
+        },
+
+        {
+            middle: 'Middle_6',
+
+        }
+    ]
+
+    let quoteEnding =[
+        {
+            ending: 'Ending_1',
+        },
+
+        {
+            ending: 'Ending_2',
+        },
+
+        {
+            ending: 'Ending_3',
+        },
+
+        {
+            ending: 'Ending_4',
+        },
+
+        {
+            ending: 'Ending_5',
+        },
+
+        {
+            ending: 'Ending_6',
+
+        }
     ]
 
 // variables
 const btn = document.getElementById("btn");
 const quote = document.getElementById("quote");
-const author = document.getElementById("author");
 
 
 //event listener
@@ -49,10 +90,11 @@ const author = document.getElementById("author");
 btn.addEventListener('click', getQuote);
 
 function getQuote () {
-    let number = Math.floor(Math.random() * quotes.length);
+    let number = Math.floor(Math.random() * quotebeginning.length);
+    let qmiddle = Math.floor(Math.random() * quoteMiddle.length);
+    let qending = Math.floor(Math.random() * quoteEnding.length);
 
-    quote.innerHTML = '<span>"</span>' + quotes[number].quote + '<span>"</span>';
-    author.innerHTML = quotes[number].author;
+    quote.innerHTML = '<span>"</span>' + quotebeginning[number].beginning + ' ' + quoteMiddle[qmiddle].middle +' ' + quoteEnding[qending].ending + '.'+'<span>"</span>';
     
 }
 
