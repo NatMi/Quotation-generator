@@ -2,80 +2,79 @@
 // quote base
     let quotebeginning =[
         {
-            beginning: 'Beginning_1',
+            beginning: "Focus on",
         },
 
         {
-            beginning: 'Beginning_2',
+            beginning: "Do not wait for",
         },
 
         {
-            beginning: 'Beginning_3',
+            beginning: "Demonstrate",
         },
 
         {
-            beginning: 'Beginning_4',
+            beginning: "Do not judge",
         },
 
         {
-            beginning: 'Beginning_5',
+            beginning: "Be direct with",
         },
-
         {
-            beginning: 'Beginning_6',
+            beginning: "Keep an eye on",
         }
     ]
 
     let quoteMiddle =[
         {
-            middle: 'Middle_1',
+            middle: "your health",
         },
 
         {
-            middle: 'Middle_2',
+            middle: "your ups and downs",
         },
 
         {
-            middle: 'Middle_3',
+            middle: "serious trouble",
         },
 
         {
-            middle: 'Middle_4',
+            middle: "your possesions",
         },
 
         {
-            middle: 'Middle_5',
+            middle: "awareness",
         },
 
         {
-            middle: 'Middle_6',
+            middle: "your observations",
 
         }
     ]
 
     let quoteEnding =[
         {
-            ending: 'Ending_1',
+            ending: "and let it be your indicator",
         },
 
         {
-            ending: 'Ending_2',
+            ending: "- it may bypass you",
         },
 
         {
-            ending: 'Ending_3',
+            ending: "- it can pay off in peculiar ways",
         },
 
         {
-            ending: 'Ending_4',
+            ending: "and it will become your habit eventually",
         },
 
         {
-            ending: 'Ending_5',
+            ending: "and stand firmly by your convictions",
         },
 
         {
-            ending: 'Ending_6',
+            ending: "and a dream you have will come true",
 
         }
     ]
