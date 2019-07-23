@@ -29,19 +29,30 @@ let quoteBeginning = new quoteBase (
 
 
 // constants
-const btn = document.getElementById("btn");
+const btnFortune = document.getElementById("btnFortune");
+const btnMisfortune = document.getElementById("btnMisfortune");
 const quote = document.getElementById("quote");
 
 
 
 
 //event listener
-btn.addEventListener('click', createNewQuotation);
+btnFortune.addEventListener('click', createNewQuotation);
+btnMisfortune.addEventListener('click', comingSoonFunction);
 
 
+
+function comingSoonFunction(){
+    quote.innerHTML = "Coming soon... *sound of thunder roll* "
+}
 function createNewQuotation () {
-
     quote.innerHTML = '<span>"</span>' + quoteBeginning.generateRandomQuotePart() + ' ' + quoteMiddle.generateRandomQuotePart() +' ' + quoteEnding.generateRandomQuotePart() + '.'+'<span>"</span>';
-    
 }
 
+
+function temporaryFunction(arg, arg2, arg3){
+    let ret = arg + arg2 + arg3;
+    return ret;
+}
+console.log (temporaryFunction(3,4,6));
+console.log (temporaryFunction('gdfd ','fdrdd ','tdrd'));
