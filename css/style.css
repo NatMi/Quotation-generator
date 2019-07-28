@@ -11,6 +11,8 @@ h1 {
     font-family:Arial;
 	font-size:20px;
 }
+
+
 .container {
     display: flex;
     min-width: 200px;
@@ -26,7 +28,6 @@ h1 {
 }
 
 .container p{
-    text-transform: capitalize;
     font-style: italic;
 }
 
