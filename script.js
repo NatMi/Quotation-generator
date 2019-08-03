@@ -44,7 +44,7 @@ let quoteBeginning = new quoteBase (
 const btnFortune = document.getElementById("btnFortune");
 const btnMisfortune = document.getElementById("btnMisfortune");
 const quote = document.getElementById("quote");
-const chosenNumberOfQuotes = document.getElementById("chosenNumberOfQuotes").value;
+let chosenNumberOfQuotes = document.getElementById("chosenNumberOfQuotes");
 const ul = document.getElementById('.quoteList');
 
 
@@ -71,7 +71,7 @@ function createMisfortuneCookie(){
 
 
 function generateQuotes(){
-for ( let i = 0; i < 5; i++) {
+for ( let i = 0; i < chosenNumberOfQuotes.value; i++) {
   let li = document.createElement('li');
   li.appendChild(document.createTextNode(`quote number = ${[i]} : ${createFortuneCookie()} `));
   quoteList.appendChild(li);
