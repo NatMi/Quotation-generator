@@ -31,19 +31,6 @@ let quoteBeginning = new quoteBase (
     [ "and let it be your gruesome burden", "- it may doom you", "- it can pay off in dreadful ways", "as it will become your downfall eventually", "and you will stay weak with your disgrace","and a nightmare you have will come true"]
  );
 
-
- /* // randomNumber function
- 
- function createRandomNumber(quotePartArray) {
-    let randomNumber = (Math.floor(Math.random() * quotePartArray.length));
-    return quoteBeginning.quotePart[randomNumber];
- };
-
- console.log(createRandomNumber(quoteBeginning.quotePart));
- 
- */
-
-
 // constants and variables from document
 const btnFortune = document.getElementById("btnFortune");
 const btnMisfortune = document.getElementById("btnMisfortune");
@@ -52,8 +39,8 @@ let chosenNumberOfQuotes = document.getElementById("chosenNumberOfQuotes");
 
 
 //event listeners
-btnFortune.addEventListener('click', generateFortuneQuotes );
-btnMisfortune.addEventListener('click', generateMisfortuneQuotes);
+btnFortune.addEventListener('click', generateFortuneQuotes );  // generateQuote(fortuneCookie)
+btnMisfortune.addEventListener('click', generateMisfortuneQuotes); // // generateQuote(misfortuneCookie)
 btnClearAll.addEventListener('click', clearAll);
 
 
@@ -73,15 +60,27 @@ function comingSoonFunction(){
     quote.innerHTML = "Coming soon... *sound of thunder roll* "
 }
 
-// fortune cookie quote generators
+ // randomNumber function
+ 
+ function createRandomNumber(quotePartArray) {
+    let randomNumber = (Math.floor(Math.random() * quotePartArray.quotePart.length));
+    return quotePartArray.quotePart[randomNumber];
+ };
+
+
+ // fortune cookie quote generators
 function createFortuneCookie () {
-    return ` "${ quoteBeginning.generateRandomQuotePart()} ${quoteMiddle.generateRandomQuotePart()} ${quoteEnding.generateRandomQuotePart()}." `;
+    return ` "${createRandomNumber(quoteBeginning)} ${createRandomNumber(quoteMiddle)} ${createRandomNumber(quoteEnding)}." `;
 
 }
 
 function createMisfortuneCookie(){
-    return ` "${ quoteBeginning.generateRandomQuotePart()} ${quoteMiddle.generateRandomQuotePart()} ${misfortuneCookieEnding.generateRandomQuotePart()}." `;
+    return ` "${createRandomNumber(quoteBeginning)} ${createRandomNumber(quoteMiddle)} ${createRandomNumber(misfortuneCookieEnding)}." `;
 }
+
+
+
+
 
 // quote generator loop - TODO - blank function, cookie type to be determined other way
 
@@ -98,11 +97,11 @@ for ( let i = 0; i < chosenNumberOfQuotes.value; i++) {
 
 function generateMisfortuneQuotes(){
     clearAll();
-for ( let i = 0; i < chosenNumberOfQuotes.value; i++) {
-  let li = document.createElement('li');
-  li.appendChild(document.createTextNode(`quote index = ${[i]} : ${createMisfortuneCookie()} `));
-  quoteList.appendChild(li);
+    for ( let i = 0; i < chosenNumberOfQuotes.value; i++) {
+    let li = document.createElement('li');
+    li.appendChild(document.createTextNode(`quote index = ${[i]} : ${createMisfortuneCookie()} `));
+    quoteList.appendChild(li);
 
-  }
+    }
 }
 
