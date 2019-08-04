@@ -36,8 +36,12 @@ let quoteBeginning = new quoteBase (
  
  function createRandomNumber(quotePartArray) {
     let randomNumber = (Math.floor(Math.random() * quotePartArray.length));
-    return randomNumber;
-} */
+    return quoteBeginning.quotePart[randomNumber];
+ };
+
+ console.log(createRandomNumber(quoteBeginning.quotePart));
+ 
+ */
 
 
 // constants and variables from document
@@ -45,21 +49,31 @@ const btnFortune = document.getElementById("btnFortune");
 const btnMisfortune = document.getElementById("btnMisfortune");
 const quote = document.getElementById("quote");
 let chosenNumberOfQuotes = document.getElementById("chosenNumberOfQuotes");
-const ul = document.getElementById('.quoteList');
-
 
 
 //event listeners
 btnFortune.addEventListener('click', generateQuotes );
 btnMisfortune.addEventListener('click', createMisfortuneCookie);
+btnClearAll.addEventListener('click', clearAll);
 
 
-// functions
+// function clears all quotes that were generated as list elements
+function clearAll() { 
+    let ul = document.querySelector("ul"); 
 
+    
+    let child = ul.lastElementChild;  
+    while (child) { 
+        ul.removeChild(child); 
+        child = ul.lastElementChild; 
+    } 
+} 
+// function to be used for features that are being worked on
 function comingSoonFunction(){
     quote.innerHTML = "Coming soon... *sound of thunder roll* "
 }
 
+// fortune cookie quote generators
 function createFortuneCookie () {
     return ` "${ quoteBeginning.generateRandomQuotePart()} ${quoteMiddle.generateRandomQuotePart()} ${quoteEnding.generateRandomQuotePart()}." `;
 
@@ -69,14 +83,16 @@ function createMisfortuneCookie(){
     quote.innerHTML = '<span>"</span>' + quoteBeginning.generateRandomQuotePart() + ' ' + quoteMiddle.generateRandomQuotePart() +' ' + misfortuneCookieEnding.generateRandomQuotePart() + '.'+'<span>"</span>';
 }
 
+// quote generator loop - TODO - blank function, cookie type to be determined other way
 
 function generateQuotes(){
+    clearAll();
 for ( let i = 0; i < chosenNumberOfQuotes.value; i++) {
   let li = document.createElement('li');
-  li.appendChild(document.createTextNode(`quote number = ${[i]} : ${createFortuneCookie()} `));
+  li.appendChild(document.createTextNode(`quote index = ${[i]} : ${createFortuneCookie()} `));
   quoteList.appendChild(li);
 
   }
 }
 
-test
+
