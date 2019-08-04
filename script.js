@@ -9,7 +9,6 @@ class quoteBase {
     }
     };
 
-
 let quoteBeginning = new quoteBase (
     [ "Focus on", "Do not wait for", "Demonstrate", "Do not judge", "Be confident with", "Keep an eye on"]
  );
@@ -22,18 +21,17 @@ let quoteBeginning = new quoteBase (
     [ "and let it be your indicator", "- it may bypass you", "- it can pay off in peculiar ways", "and it will become your habit eventually", "and stand firmly by your convictions","and a dream you have will come true"]
  );
 
- let misfortuneCookieEnding = new quoteBase (
+ let misfortuneEnding = new quoteBase (
     [ "and let it be your gruesome burden", "- it may doom you", "- it can pay off in dreadful ways", "as it will become your downfall eventually", "and you will stay weak with your disgrace","and a nightmare you have will come true"]
  );
 
-// constants and variables from document
+
+// DOM
 const btnFortune = document.getElementById("btnFortune");
 const btnMisfortune = document.getElementById("btnMisfortune");
 const quote = document.getElementById("quote");
 let chosenNumberOfQuotes = document.getElementById("chosenNumberOfQuotes");
 
-
-//event listeners
 btnFortune.addEventListener('click', generateFortuneQuotes );  // generateQuote(fortuneCookie)
 btnMisfortune.addEventListener('click', generateMisfortuneQuotes); // // generateQuote(misfortuneCookie)
 btnClearAll.addEventListener('click', clearAll);
@@ -50,6 +48,7 @@ function clearAll() {
         child = ul.lastElementChild; 
     } 
 } 
+
 // function to be used for features that are being worked on
 function comingSoonFunction(){
     quote.innerHTML = "Coming soon... *sound of thunder roll* "
@@ -63,23 +62,20 @@ function comingSoonFunction(){
  };
 
 
- // fortune cookie quote generators
-function createFortuneCookie () {
-    return ` "${randomQuotePart(quoteBeginning)} ${randomQuotePart(quoteMiddle)} ${randomQuotePart(quoteEnding)}." `;
+ // generate quote
 
-}
-
-function createMisfortuneCookie(){
-    return ` "${randomQuotePart(quoteBeginning)} ${randomQuotePart(quoteMiddle)} ${randomQuotePart(misfortuneCookieEnding)}." `;
+ function generateQuote (cookieBeginning, cookieMiddle, cookieEnding){
+    return ` "${randomQuotePart(cookieBeginning)} ${randomQuotePart(cookieMiddle)} ${randomQuotePart(cookieEnding)}." `;
 }
 
 // quote generator loop - TODO - blank function, cookie type to be determined other way
+// generateQuote(misfortuneCookie) or (fortuneCookie)
 
 function generateFortuneQuotes(){
     clearAll();
 for ( let i = 0; i < chosenNumberOfQuotes.value; i++) {
   let li = document.createElement('li');
-  li.appendChild(document.createTextNode(`quote index = ${[i]} : ${createFortuneCookie()} `));
+  li.appendChild(document.createTextNode(`quote index = ${[i]} : ${generateQuote (quoteBeginning, quoteMiddle, quoteEnding)} `));
   quoteList.appendChild(li);
 
   }
@@ -90,9 +86,9 @@ function generateMisfortuneQuotes(){
     clearAll();
     for ( let i = 0; i < chosenNumberOfQuotes.value; i++) {
     let li = document.createElement('li');
-    li.appendChild(document.createTextNode(`quote index = ${[i]} : ${createMisfortuneCookie()} `));
+    li.appendChild(document.createTextNode(`quote index = ${[i]} : ${generateQuote (quoteBeginning, quoteMiddle, misfortuneEnding)} `));
     quoteList.appendChild(li);
 
     }
-}
+}   
 
