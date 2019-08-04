@@ -7,11 +7,6 @@ class quoteBase {
     constructor (quotePart){
         this.quotePart = quotePart;
     }
-
-    generateRandomQuotePart() {
-     let randomSentencePart = this.quotePart[Math.floor(Math.random() * this.quotePart.length)];
-      return randomSentencePart;
-    }
     };
 
 
@@ -60,9 +55,9 @@ function comingSoonFunction(){
     quote.innerHTML = "Coming soon... *sound of thunder roll* "
 }
 
- // randomNumber function
+ // randomQuotePart function
  
- function createRandomNumber(quotePartArray) {
+ function randomQuotePart(quotePartArray) {
     let randomNumber = (Math.floor(Math.random() * quotePartArray.quotePart.length));
     return quotePartArray.quotePart[randomNumber];
  };
@@ -70,17 +65,13 @@ function comingSoonFunction(){
 
  // fortune cookie quote generators
 function createFortuneCookie () {
-    return ` "${createRandomNumber(quoteBeginning)} ${createRandomNumber(quoteMiddle)} ${createRandomNumber(quoteEnding)}." `;
+    return ` "${randomQuotePart(quoteBeginning)} ${randomQuotePart(quoteMiddle)} ${randomQuotePart(quoteEnding)}." `;
 
 }
 
 function createMisfortuneCookie(){
-    return ` "${createRandomNumber(quoteBeginning)} ${createRandomNumber(quoteMiddle)} ${createRandomNumber(misfortuneCookieEnding)}." `;
+    return ` "${randomQuotePart(quoteBeginning)} ${randomQuotePart(quoteMiddle)} ${randomQuotePart(misfortuneCookieEnding)}." `;
 }
-
-
-
-
 
 // quote generator loop - TODO - blank function, cookie type to be determined other way
 
