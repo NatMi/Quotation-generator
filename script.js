@@ -1,8 +1,4 @@
-
-
-
 // quote base
-
 class quoteBase {
     constructor (quotePart){
         this.quotePart = quotePart;
@@ -25,22 +21,19 @@ let quoteBeginning = new quoteBase (
     [ "and let it be your gruesome burden", "- it may doom you", "- it can pay off in dreadful ways", "as it will become your downfall eventually", "and you will stay weak with your disgrace","and a nightmare you have will come true"]
  );
 
-
 // DOM
 const btnFortune = document.getElementById("btnFortune");
 const btnMisfortune = document.getElementById("btnMisfortune");
 const quote = document.getElementById("quote");
 let chosenNumberOfQuotes = document.getElementById("chosenNumberOfQuotes");
 
-btnFortune.addEventListener('click', generateFortuneQuotes );  // generateQuote(fortuneCookie)
+btnFortune.addEventListener('click', generateFortuneQuotes);  // generateQuote(fortuneCookie)
 btnMisfortune.addEventListener('click', generateMisfortuneQuotes); // // generateQuote(misfortuneCookie)
 btnClearAll.addEventListener('click', clearAll);
-
 
 // function clears all quotes that were generated as list elements
 function clearAll() { 
     let ul = document.querySelector("ul"); 
-
     
     let child = ul.lastElementChild;  
     while (child) { 
@@ -55,32 +48,26 @@ function comingSoonFunction(){
 }
 
  // randomQuotePart function
- 
  function randomQuotePart(quotePartArray) {
     let randomNumber = (Math.floor(Math.random() * quotePartArray.quotePart.length));
     return quotePartArray.quotePart[randomNumber];
  };
 
-
  // generate quote
-
  function generateQuote (cookieBeginning, cookieMiddle, cookieEnding){
     return ` "${randomQuotePart(cookieBeginning)} ${randomQuotePart(cookieMiddle)} ${randomQuotePart(cookieEnding)}." `;
 }
 
 // quote generator loop - TODO - blank function, cookie type to be determined other way
-// generateQuote(misfortuneCookie) or (fortuneCookie)
-
+// generateQuoteType(misfortuneCookie) or (fortuneCookie)
 function generateFortuneQuotes(){
     clearAll();
 for ( let i = 0; i < chosenNumberOfQuotes.value; i++) {
   let li = document.createElement('li');
   li.appendChild(document.createTextNode(`quote index = ${[i]} : ${generateQuote (quoteBeginning, quoteMiddle, quoteEnding)} `));
   quoteList.appendChild(li);
-
   }
 }
-
 
 function generateMisfortuneQuotes(){
     clearAll();
@@ -88,7 +75,14 @@ function generateMisfortuneQuotes(){
     let li = document.createElement('li');
     li.appendChild(document.createTextNode(`quote index = ${[i]} : ${generateQuote (quoteBeginning, quoteMiddle, misfortuneEnding)} `));
     quoteList.appendChild(li);
-
     }
 }   
 
+function generateQuoteType(cookieType){
+    clearAll();
+    for ( let i = 0; i < chosenNumberOfQuotes.value; i++) {
+    let li = document.createElement('li');
+    li.appendChild(document.createTextNode(`quote index = ${[i]} : ${generateQuote (quoteBeginning, quoteMiddle, cookieType)} `));
+    quoteList.appendChild(li);
+    }
+}
