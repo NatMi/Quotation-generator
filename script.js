@@ -52,8 +52,8 @@ let chosenNumberOfQuotes = document.getElementById("chosenNumberOfQuotes");
 
 
 //event listeners
-btnFortune.addEventListener('click', generateQuotes );
-btnMisfortune.addEventListener('click', createMisfortuneCookie);
+btnFortune.addEventListener('click', generateFortuneQuotes );
+btnMisfortune.addEventListener('click', generateMisfortuneQuotes);
 btnClearAll.addEventListener('click', clearAll);
 
 
@@ -80,12 +80,12 @@ function createFortuneCookie () {
 }
 
 function createMisfortuneCookie(){
-    quote.innerHTML = '<span>"</span>' + quoteBeginning.generateRandomQuotePart() + ' ' + quoteMiddle.generateRandomQuotePart() +' ' + misfortuneCookieEnding.generateRandomQuotePart() + '.'+'<span>"</span>';
+    return ` "${ quoteBeginning.generateRandomQuotePart()} ${quoteMiddle.generateRandomQuotePart()} ${misfortuneCookieEnding.generateRandomQuotePart()}." `;
 }
 
 // quote generator loop - TODO - blank function, cookie type to be determined other way
 
-function generateQuotes(){
+function generateFortuneQuotes(){
     clearAll();
 for ( let i = 0; i < chosenNumberOfQuotes.value; i++) {
   let li = document.createElement('li');
@@ -95,4 +95,14 @@ for ( let i = 0; i < chosenNumberOfQuotes.value; i++) {
   }
 }
 
+
+function generateMisfortuneQuotes(){
+    clearAll();
+for ( let i = 0; i < chosenNumberOfQuotes.value; i++) {
+  let li = document.createElement('li');
+  li.appendChild(document.createTextNode(`quote index = ${[i]} : ${createMisfortuneCookie()} `));
+  quoteList.appendChild(li);
+
+  }
+}
 
