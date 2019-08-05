@@ -27,9 +27,23 @@ const btnMisfortune = document.getElementById("btnMisfortune");
 const quote = document.getElementById("quote");
 let chosenNumberOfQuotes = document.getElementById("chosenNumberOfQuotes");
 
-btnFortune.addEventListener('click', generateFortuneQuotes);  // generateQuote(fortuneCookie)
-btnMisfortune.addEventListener('click', generateMisfortuneQuotes); // // generateQuote(misfortuneCookie)
-btnClearAll.addEventListener('click', clearAll);
+// click event delegation
+const parent = document.querySelector("body");
+
+parent.addEventListener('click', event => {
+	if (event.target.className === 'btnFortune') {
+        generateFortuneQuotes();
+    }
+
+    if (event.target.className === 'btnMisfortune') {
+        generateMisfortuneQuotes();
+    }
+
+    if (event.target.className === 'btnClearAll') {
+        clearAll();
+    }
+
+ });
 
 // function clears all quotes that were generated as list elements
 function clearAll() { 
@@ -60,6 +74,7 @@ function comingSoonFunction(){
 
 // quote generator loop - TODO - blank function, cookie type to be determined other way
 // generateQuoteType(misfortuneCookie) or (fortuneCookie)
+
 function generateFortuneQuotes(){
     clearAll();
 for ( let i = 0; i < chosenNumberOfQuotes.value; i++) {
@@ -69,7 +84,7 @@ for ( let i = 0; i < chosenNumberOfQuotes.value; i++) {
   }
 }
 
-function generateMisfortuneQuotes(){
+function generateMisfortuneQuotes(){ // parameters here
     clearAll();
     for ( let i = 0; i < chosenNumberOfQuotes.value; i++) {
     let li = document.createElement('li');
@@ -78,11 +93,13 @@ function generateMisfortuneQuotes(){
     }
 }   
 
-function generateQuoteType(cookieType){
-    clearAll();
-    for ( let i = 0; i < chosenNumberOfQuotes.value; i++) {
-    let li = document.createElement('li');
-    li.appendChild(document.createTextNode(`quote index = ${[i]} : ${generateQuote (quoteBeginning, quoteMiddle, cookieType)} `));
-    quoteList.appendChild(li);
-    }
-}
+
+
+// function generateQuoteType(cookieType){
+//     clearAll();
+//     for ( let i = 0; i < chosenNumberOfQuotes.value; i++) {
+//     let li = document.createElement('li');
+//     li.appendChild(document.createTextNode(`quote index = ${[i]} : ${generateQuote (quoteBeginning, quoteMiddle, cookieType)} `));
+//     quoteList.appendChild(li);
+//     }
+// }
