@@ -22,27 +22,24 @@ let quoteBeginning = new quoteBase (
  );
 
 // DOM
-const btnFortune = document.getElementById("btnFortune");
-const btnMisfortune = document.getElementById("btnMisfortune");
 const quote = document.getElementById("quote");
 let chosenNumberOfQuotes = document.getElementById("chosenNumberOfQuotes");
 
-// click event delegation
+// click event delegation  // TODO: grab by id instead of class?
 const parent = document.querySelector("body");
 
 parent.addEventListener('click', event => {
 	if (event.target.className === 'btnFortune') {
-        generateFortuneQuotes();
+        generateQuotes(quoteBeginning, quoteMiddle, quoteEnding);
     }
 
     if (event.target.className === 'btnMisfortune') {
-        generateMisfortuneQuotes();
+        generateQuotes(quoteBeginning, quoteMiddle, misfortuneEnding);
     }
 
     if (event.target.className === 'btnClearAll') {
         clearAll();
     }
-
  });
 
 // function clears all quotes that were generated as list elements
@@ -56,50 +53,23 @@ function clearAll() {
     } 
 } 
 
-// function to be used for features that are being worked on
-function comingSoonFunction(){
-    quote.innerHTML = "Coming soon... *sound of thunder roll* "
-}
-
  // randomQuotePart function
  function randomQuotePart(quotePartArray) {
     let randomNumber = (Math.floor(Math.random() * quotePartArray.quotePart.length));
     return quotePartArray.quotePart[randomNumber];
  };
 
- // generate quote
- function generateQuote (cookieBeginning, cookieMiddle, cookieEnding){
-    return ` "${randomQuotePart(cookieBeginning)} ${randomQuotePart(cookieMiddle)} ${randomQuotePart(cookieEnding)}." `;
-}
-
-// quote generator loop - TODO - blank function, cookie type to be determined other way
-// generateQuoteType(misfortuneCookie) or (fortuneCookie)
-
-function generateFortuneQuotes(){
+// generate quote type & loop  // TODO: quote type parameter?
+function generateQuotes(cookieBeginning, cookieMiddle, cookieEnding){
     clearAll();
 for ( let i = 0; i < chosenNumberOfQuotes.value; i++) {
   let li = document.createElement('li');
-  li.appendChild(document.createTextNode(`quote index = ${[i]} : ${generateQuote (quoteBeginning, quoteMiddle, quoteEnding)} `));
+  li.appendChild(document.createTextNode(` "${randomQuotePart(cookieBeginning)} ${randomQuotePart(cookieMiddle)} ${randomQuotePart(cookieEnding)}." `));
   quoteList.appendChild(li);
   }
 }
 
-function generateMisfortuneQuotes(){ // parameters here
-    clearAll();
-    for ( let i = 0; i < chosenNumberOfQuotes.value; i++) {
-    let li = document.createElement('li');
-    li.appendChild(document.createTextNode(`quote index = ${[i]} : ${generateQuote (quoteBeginning, quoteMiddle, misfortuneEnding)} `));
-    quoteList.appendChild(li);
-    }
-}   
-
-
-
-// function generateQuoteType(cookieType){
-//     clearAll();
-//     for ( let i = 0; i < chosenNumberOfQuotes.value; i++) {
-//     let li = document.createElement('li');
-//     li.appendChild(document.createTextNode(`quote index = ${[i]} : ${generateQuote (quoteBeginning, quoteMiddle, cookieType)} `));
-//     quoteList.appendChild(li);
-//     }
-// }
+// function to be used for features that are being worked on
+function comingSoonFunction(){
+    quote.innerHTML = "Coming soon... *sound of thunder roll* "
+}
