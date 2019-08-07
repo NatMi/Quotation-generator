@@ -1,10 +1,14 @@
 body {
     background-image: url(../images/fortunecookie.jpg);
-    background-size: 350px;
+    background-size: 400px;
     background-repeat: repeat;
     background-color: #ffe1c9;
-    text-align: center;
-    padding: 100px;
+}
+
+
+footer{
+	text-align: center;
+	padding: 10px;
 }
 
 h1 {
@@ -16,18 +20,19 @@ ul {
 	list-style: none;
   }
 
+  a:link, :visited, :hover, :active {
+	text-decoration: none;
+  }
+  
 .container {
-    display: flex;
-    min-width: 200px;
     border: solid 2px #b06a29;
-    justify-content: center;
     background-color: #fcfcfc;
-    padding: 40px;
 }
 
 .quote-container {
     font-size: 1.5rem;;
-    text-align: center;
+	text-align: center;
+	padding: 40px;
 }
 
 .container p{
@@ -82,12 +87,14 @@ ul {
 	text-shadow:0px 1px 0px #332206;
 }
 
-#btn:hover {
-    background-color:#b06a29;
+#btnFortune:hover {
+	background-color:#b06a29;
 }
-#btn:active :visited {
-	position:relative;
-    top:1px;
+#btnMisfortune:hover {
+    background-color:#2736aa;
+}
+#btnClearAll:hover{
+	background-color: #026ac0;
 }
 
 
