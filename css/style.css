@@ -48,6 +48,9 @@ footer{
 	position: absolute;
 	bottom: 0;
 }
+h2, li, #cookieButtons, #selectNumber {
+	padding-bottom:10px;
+}
 
 a:link{
 	text-decoration: none;
@@ -96,8 +99,7 @@ li{
 }
 
 #btnClearAll {
-	box-shadow:inset 0px 39px 0px -24px #32a3ff;
-	background-color:#008cff;
+	background-color:#6791b3;
 	border-radius:4px;
 	border:1px solid #ffffff;
 	color:#ffffff;
@@ -116,6 +118,5 @@ li{
     background-color:#2736aa;
 }
 #btnClearAll:hover{
-	background-color: #026ac0;
-	box-shadow:inset 0px 39px 0px -24px #2882cc;
+	background-color: #2774b3;
 }
