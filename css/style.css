@@ -1,41 +1,66 @@
+*{
+	margin:0;
+	padding:0;
+	list-style:none;
+	text-decoration:none;
+	font-family: 'Lora', serif;
+}
+
 body {
     background-image: url(../images/fortunecookie.jpg);
     background-size: 400px;
     background-repeat: repeat;
-    background-color: #ffe1c9;
+	background-color: #ffe1c9;
 }
 
+header{
+	background-color: #b1611c;
+	display:block;
+	padding-bottom: 30px;
+	width:100%;
+	color:white;
+	text-align: center;
+}
+
+main{
+	width: 90vw;
+	margin: 0 auto;
+}
+
+.logo-container{
+	height:100%;
+	}
+
+.logo-container h1{
+	font-family: 'Amatic SC', cursive;
+	text-shadow: 1px 1px 1px#333231;
+	margin-bottom: 5px;
+}
 
 footer{
 	text-align: center;
-	padding: 10px;
+	background-color: #bd6e2a;
+	color: black;
+	width: 100%;
+	padding: 10px 0px;
+	position: absolute;
+	bottom: 0;
 }
 
-h1 {
-    font-family:Arial;
-	font-size:20px;
-}
-
-ul {
-	list-style: none;
-  }
-
-  a:link, :visited, :hover, :active {
+a:link{
 	text-decoration: none;
+	color:black;
   }
   
-.container {
-    border: solid 2px #b06a29;
-    background-color: #fcfcfc;
-}
 
 .quote-container {
-    font-size: 1.5rem;;
+	border: solid 2px #b06a29;
+    background-color: #fcfcfc;
 	text-align: center;
-	padding: 40px;
+	margin: 10%;
 }
 
-.container p{
+li{
     font-style: italic;
 }
 
@@ -95,6 +120,5 @@ ul {
 }
 #btnClearAll:hover{
 	background-color: #026ac0;
+	box-shadow:inset 0px 39px 0px -24px #2882cc;
 }
-
-

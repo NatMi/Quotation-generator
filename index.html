@@ -7,47 +7,54 @@
         <title>Fortune Cookie random quote generator.</title>
         <meta name="description" content="This is initial site template for my Fortune Cookie Quote generator!">
         <meta name="keywords" content="fortune cookie, quotes, inspirational">
-        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="icon" href="images/minicookie.png" type="image/x-icon"/> 
         
 
         <link rel='stylesheet' type='text/css' media='screen' href='css/style.css'>
+        <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Lora&display=swap" rel="stylesheet">
 
     </head>
 
     <body>
-        <div class="container">
-        
+        <header>
+            <div class="inner-header">
+                <div class=logo-container>
+                        <h1>Fortune cookie quote generator</h1>
+                        <p>Crack the cookie open to see your random fortune quotes!</p>
+                </div>
+            </div>
+        </header>
+            
+        <main>
             <div class="quote-container">
-                <h1>Crack the cookie open to see your random fortune quotes!</h1>
-                    <p> How many cookies do you want to open?
-
-                         <select id= "chosenNumberOfQuotes" name="chosenNumberOfQuotes">
+                    <h2> How many cookies do you want to open?</h2>
+                    <select id= "chosenNumberOfQuotes" name="chosenNumberOfQuotes">
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
                             <option value="4">4</option>
                             <option value="5">5</option>
-                        </select>
-                    </p>
-                  
+                    </select>
+
+                    <div>
                             <button class= "btnFortune" id="btnFortune">  Crack the fortune cookie open!  </button> 
                             <button class= "btnMisfortune" id="btnMisfortune">  Crack the misfortune cookie open!  </button>
-
                             <button class="btnClearAll" id="btnClearAll">  Clear all quotes </button>
+                    </div>
 
-                <p id="quote"> 
-                    <ul id="quoteList">   
-                    </ul>
-                </p>
+                    <p id="quote"> 
+                        <ul id="quoteList">   
+                        </ul>
+                    </p>
+                
 
             </div>
-
-            <footer>
+        </main>
+        
+        <footer>
                 2019 Created by <a href="https://github.com/NatMi/Quotation-generator" target="_blank">NatMi</a>
-            </footer>
-        </div>
-
+        </footer>
 
     <script src='script.js'></script>
     </body>
