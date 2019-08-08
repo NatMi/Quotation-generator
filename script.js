@@ -6,19 +6,19 @@ class quoteBase {
     };
 
 let quoteBeginning = new quoteBase (
-    [ "Focus on", "Do not wait for", "Demonstrate", "Do not judge", "Be confident with", "Keep an eye on"]
+    [ "Focus on", "Put trust in", "Learn from", "Honor", "Embrace", "Keep your eyes on", "Praise", "Celebrate"]
  );
 
- let quoteMiddle = new quoteBase (
-    [ "your health", "opportunities", "serious trouble", "your possesion", "awareness", "your observation"]
+let quoteMiddle = new quoteBase (
+    [ "your abilities", "opportunities", "present moment", "whatever makes you happy", "possibilities of improvement", "your passion", "the goal", "people who are going to lift you higher",]
  );
 
- let quoteEnding = new quoteBase (
-    [ "and let it be your indicator", "- it may bypass you", "- it can pay off in peculiar ways", "and it will become your habit eventually", "and stand firmly by your convictions","and a dream you have will come true"]
+let quoteEnding = new quoteBase (
+    [ "and let it be your indicator", "- interesting proposition will come your way", "- it can pay off in most satisfying ways", "and it will become your habit eventually", "- good things will happen","and a dream you have will come true", "- you are heading in the right direction"]
  );
 
- let misfortuneEnding = new quoteBase (
-    [ "and let it be your gruesome burden", "- it may doom you", "- it can pay off in dreadful ways", "as it will become your downfall eventually", "and you will stay weak with your disgrace","and a nightmare you have will come true"]
+let misfortuneEnding = new quoteBase (
+    [ "and let it be your gruesome burden", "- it may doom you", "- it can pay off in dreadful ways", "as it will become your downfall eventually", "and you will stay weak with your disgrace","and a nightmare you have will come true", "before you realise this ship is sinking fast"]
  );
 
 // DOM
