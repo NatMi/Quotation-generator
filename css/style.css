@@ -11,6 +11,8 @@ body {
     background-size: 400px;
     background-repeat: repeat;
 	background-color: #ffe1c9;
+	position: relative;
+	min-height: 100vh;
 }
 
 header{
@@ -23,8 +25,8 @@ header{
 }
 
 main{
-	width: 90vw;
 	margin: 0 auto;
+	padding-bottom:100px;
 }
 
 .logo-container{

@@ -64,7 +64,7 @@ function generateQuotes(cookieBeginning, cookieMiddle, cookieEnding){
     clearAll();
 for ( let i = 0; i < chosenNumberOfQuotes.value; i++) {
   let li = document.createElement('li');
-  li.appendChild(document.createTextNode(` "${randomQuotePart(cookieBeginning)} ${randomQuotePart(cookieMiddle)} ${randomQuotePart(cookieEnding)}." `));
+  li.appendChild(document.createTextNode(` ${[i+1]}. "${randomQuotePart(cookieBeginning)} ${randomQuotePart(cookieMiddle)} ${randomQuotePart(cookieEnding)}." `));
   quoteList.appendChild(li);
   }
 }
