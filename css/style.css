@@ -22,6 +22,7 @@ header{
 	width:100%;
 	color:white;
 	text-align: center;
+	border-bottom: solid 2px #dd9c60;
 }
 
 main{
@@ -42,21 +43,24 @@ main{
 footer{
 	text-align: center;
 	background-color: #bd6e2a;
-	color: black;
+	color:rgb(41, 41, 41);
 	width: 100%;
 	padding: 10px 0px;
 	position: absolute;
 	bottom: 0;
+	border-top: solid 2px #dd9c60;
 }
 h2, li, #cookieButtons, #selectNumber {
 	padding-bottom:10px;
 }
 
-a:link{
+a:hover, :active {
 	text-decoration: none;
-	color:black;
+	color: #664424;
   }
-  
+a:link, :visited{
+	color:#dd9c60;
+}
 
 .quote-container {
 	border: solid 2px #b06a29;

@@ -18,7 +18,7 @@ let quoteEnding = new quoteBase (
  );
 
 let misfortuneEnding = new quoteBase (
-    [ "and let it be your gruesome burden", "- it may doom you", "- it can pay off in dreadful ways", "as it will become your downfall eventually", "and you will stay weak with your disgrace","and a nightmare you have will come true", "before you realise this ship is sinking fast"]
+    [ "and let it be your gruesome burden", "- it may doom you", "- it can pay off in dreadful ways", "as it will become your downfall eventually","while you can", "and you will stay weak with your disgrace","and a nightmare you have will come true", "before you realise this ship is sinking fast"]
  );
 
 // DOM
