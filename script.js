@@ -25,6 +25,7 @@ let misfortuneEnding = new quoteBase (
 const quote = document.getElementById("quote");
 let btnClearAll = document.getElementById("btnClearAll")
 let chosenNumberOfQuotes = document.getElementById("chosenNumberOfQuotes");
+let miniCookieImg = document.getElementById("minicookie")
 
 // click event delegation 
 const parent = document.querySelector("body");
@@ -52,6 +53,7 @@ function clearAll() {
         ul.removeChild(child); 
         child = ul.lastElementChild; 
         btnClearAll.style.display = "none"; // hides "Clear all" button that is generated along with the random quote list
+        miniCookieImg.style.display ="none"
     } 
 } 
 
@@ -69,6 +71,7 @@ for ( let i = 0; i < chosenNumberOfQuotes.value; i++) {
   li.appendChild(document.createTextNode(` ${[i+1]}. "${randomQuotePart(cookieBeginning)} ${randomQuotePart(cookieMiddle)} ${randomQuotePart(cookieEnding)}." `));
   quoteList.appendChild(li);
   btnClearAll.style.display = "inline-block";
+  miniCookieImg.style.display ="inline-block"
   }
 }
 
