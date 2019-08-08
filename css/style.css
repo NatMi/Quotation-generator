@@ -16,9 +16,9 @@ body {
 }
 
 header{
-	background-color: #b1611c;
+	background-color:rgba(134, 74, 21, 0.849);
 	display:block;
-	padding-bottom: 30px;
+	padding: 30px 0px ;
 	width:100%;
 	color:white;
 	text-align: center;
@@ -42,8 +42,8 @@ main{
 
 footer{
 	text-align: center;
-	background-color: #bd6e2a;
-	color:rgb(41, 41, 41);
+	background-color: #3b3b3b;
+	color:rgb(196, 196, 196);
 	width: 100%;
 	padding: 10px 0px;
 	position: absolute;
