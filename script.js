@@ -23,6 +23,7 @@ let quoteBeginning = new quoteBase (
 
 // DOM
 const quote = document.getElementById("quote");
+let btnClearAll = document.getElementById("btnClearAll")
 let chosenNumberOfQuotes = document.getElementById("chosenNumberOfQuotes");
 
 // click event delegation  // TODO: grab by id instead of class?
@@ -50,6 +51,7 @@ function clearAll() {
     while (child) { 
         ul.removeChild(child); 
         child = ul.lastElementChild; 
+        btnClearAll.style.display = "none";
     } 
 } 
 
@@ -66,6 +68,7 @@ for ( let i = 0; i < chosenNumberOfQuotes.value; i++) {
   let li = document.createElement('li');
   li.appendChild(document.createTextNode(` ${[i+1]}. "${randomQuotePart(cookieBeginning)} ${randomQuotePart(cookieMiddle)} ${randomQuotePart(cookieEnding)}." `));
   quoteList.appendChild(li);
+  btnClearAll.style.display = "inline-block";
   }
 }
 

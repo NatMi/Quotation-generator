@@ -62,6 +62,9 @@ a:link{
 	margin: 10%;
 }
 
+#quote{
+	justify-items: center;
+}
 li{
     font-style: italic;
 }
@@ -70,12 +73,9 @@ li{
 	box-shadow:inset 0px 39px 0px -24px #d68945;
 	background-color:#bd6e2a;
 	border-radius:4px;
-	border-radius:4px;
-	border-radius:4px;
 	border:1px solid #ffffff;
 	display:inline-block;
 	color:#ffffff;
-	font-family:Arial;
 	font-size:15px;
 	padding:6px 15px;
 	text-decoration:none;
@@ -86,12 +86,9 @@ li{
 	box-shadow:inset 0px 39px 0px -24px #4556d6;
 	background-color:#2a40bd;
 	border-radius:4px;
-	border-radius:4px;
-	border-radius:4px;
 	border:1px solid #ffffff;
 	display:inline-block;
 	color:#ffffff;
-	font-family:Arial;
 	font-size:15px;
 	padding:6px 15px;
 	text-decoration:none;
@@ -102,16 +99,14 @@ li{
 	box-shadow:inset 0px 39px 0px -24px #32a3ff;
 	background-color:#008cff;
 	border-radius:4px;
-	border-radius:4px;
-	border-radius:4px;
 	border:1px solid #ffffff;
-	display:inline-block;
 	color:#ffffff;
-	font-family:Arial;
 	font-size:15px;
 	padding:6px 15px;
+	margin:10px;
 	text-decoration:none;
 	text-shadow:0px 1px 0px #332206;
+	display:none;
 }
 
 #btnFortune:hover {
