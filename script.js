@@ -25,6 +25,7 @@ let misfortuneEnding = new quoteBase (
 const quote = document.getElementById("quote");
 let btnClearAll = document.getElementById("btnClearAll")
 let chosenNumberOfQuotes = document.getElementById("chosenNumberOfQuotes");
+let ul = document.querySelector("ul"); 
 let miniCookieImg = document.getElementById("minicookie")
 
 // click event delegation 
@@ -35,18 +36,17 @@ parent.addEventListener('click', event => {
         generateQuotes(quoteBeginning, quoteMiddle, quoteEnding);
     }
 
-    if (event.target.id === 'btnMisfortune') {
+    else if (event.target.id === 'btnMisfortune') {
         generateQuotes(quoteBeginning, quoteMiddle, misfortuneEnding);
     }
 
-    if (event.target.id === 'btnClearAll') {
+    else if (event.target.id === 'btnClearAll') {
         clearAll();
     }
  });
 
 // function clears all quotes that were generated as list elements
 function clearAll() { 
-    let ul = document.querySelector("ul"); 
     
     let child = ul.lastElementChild;  
     while (child) { 
@@ -66,10 +66,14 @@ function clearAll() {
 // generate quote type & loop 
 function generateQuotes(cookieBeginning, cookieMiddle, cookieEnding){
     clearAll();
+
 for ( let i = 0; i < chosenNumberOfQuotes.value; i++) {
   let li = document.createElement('li');
+
   li.appendChild(document.createTextNode(` ${[i+1]}. "${randomQuotePart(cookieBeginning)} ${randomQuotePart(cookieMiddle)} ${randomQuotePart(cookieEnding)}." `));
-  quoteList.appendChild(li);
+  
+  ul.appendChild(li);
+
   btnClearAll.style.display = "inline-block";
   miniCookieImg.style.display ="inline-block"
   }
