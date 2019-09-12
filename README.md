@@ -12,3 +12,4 @@ Design algorithm that:
 
 Additional features intoduced beyond the scope of this task:
 - DOM manipulation
+- Hosted via GitHub pages: https://natmi.github.io/Quotation-generator/
